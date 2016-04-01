@@ -1,5 +1,5 @@
 """
-Django settings for ghretrac project.
+Django settings for dosteps project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -36,7 +36,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ghretrac',
+    'django_extensions',
+    'dosteps',
+    'igecas',
+    'inacar'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -47,6 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'dosteps.middleware.RequestThreadingLocal'
 )
 
 ROOT_URLCONF = 'main.urls'
@@ -82,3 +86,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+if DEBUG == True:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'main', 'static_tmp')
