@@ -1,0 +1,17 @@
+{% load static from staticfiles %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <link rel="shortcut icon" href="{% static 'igecas/favicon.ico' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'igecas/igecas.css' %}">
+      <script src="{% static 'igecas/brython/brython.js' %}"></script>
+      <title>{{ html.head.title }}</title>
+    </head>
+    <body onload="brython(2)">
+    {% block html.body %} 
+    {% endblock %}
+  	</body>
+</html>

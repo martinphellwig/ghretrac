@@ -1,0 +1,15 @@
+{% load static from staticfiles %}
+{% load url from future %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <link rel="shortcut icon" href="{% static 'ani/favicon.ico' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'ani/ani.css' %}">
+      <title>{{ html.head.title }}</title>
+    </head>
+    {% block html.body %} 
+    {% endblock %}
+  	</body>
+</html>

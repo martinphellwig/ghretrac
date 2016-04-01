@@ -1,0 +1,2 @@
+import igecas
+igecas.main()
